@@ -3,7 +3,6 @@ const checker =  require('./checker')
 const cors = require('cors')({origin: true})
 const app = require('./app')
 
-console.log("IMPORTED APP: ", app.admin)
 const db = app.admin.database()
 
 const entity = "user"
