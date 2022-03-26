@@ -53,6 +53,7 @@ build/Release
 functions/yarn.lock
 yarn.lock
 node_modules/
+package-lock.json
 
 # Optional npm cache directory
 .npm
