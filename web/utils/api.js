@@ -11,10 +11,9 @@ const getUserList = async (user) => {
     //const idToken = await user.getIdToken(/* forceRefresh */ false)
     //console.log("Retrieved: ", idToken)
 
-
     let idToken = user["Aa"]
 
-    console.log("\n\nI'm usin token: ", idToken)
+    console.log("\n\nI'm using token: ", idToken)
     console.log(`Now is  ${Math.floor(Date.now()/1000)} - token expiration is::: ${user?.h?.b?.a}`)
     console.log(`Now is  ${new Date(Date.now())} - token expiration is::: ${new Date(user?.h?.b?.a*1000)}`)
 
