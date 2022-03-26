@@ -64,7 +64,6 @@ exports.checkAuthorizedUser = async (request, response, claims) => {
 
     if (claims) {
         for (let i in claims) {
-            console.log(".....1")
             if (decodedIdToken[claims[i]]) {
                 console.log("Found role: ", claims[i])
                 return true
@@ -75,7 +74,6 @@ exports.checkAuthorizedUser = async (request, response, claims) => {
         response.status(401).send({"error":em}) // 401 Unauthorized
         return false
     }
-    console.log(".....2")
     return true
 }
 
