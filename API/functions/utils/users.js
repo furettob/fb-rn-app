@@ -133,7 +133,6 @@ const getUserListChecker = async (request, response) => {
     }
     const isUserAuthorized = await checker.checkAuthorizedUser(request, response)
 
-    console.log(".....3, " + isUserAuthorized)
     return isUserAuthorized
 }
 exports.getUserList =  functions.https.onRequest(async (request, response) => {
@@ -141,9 +140,7 @@ exports.getUserList =  functions.https.onRequest(async (request, response) => {
         try {
             const proceed = await getUserListChecker(request, response)
             if (proceed) {
-                console.log(".....4")
                 const res = await db.ref(`${basePath}`).once('value');
-                console.log(".....5")
                 response.status(200).send({data: res});
             }
         } catch (e) {
