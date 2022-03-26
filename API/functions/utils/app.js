@@ -1,9 +1,8 @@
 require ("dotenv").config()
-console.log("\n\nTARGET_ENV: ", process.env.TARGET_ENV)
 
-const firebaseConfig = require("../firebaseConfig_"+process.env.TARGET_ENV+".js")
+const firebaseConfig = require("../firebaseConfig_" + process.env.TARGET_ENV + ".js")
 
-console.log("FFFF... ", firebaseConfig)
+console.log("firebaseConfig: ", firebaseConfig)
 
 const admin = require('firebase-admin')
 admin.initializeApp(firebaseConfig)
