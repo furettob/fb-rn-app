@@ -13,3 +13,19 @@ web-build/
 
 # macOS
 .DS_Store
+
+# config
+environment.js
+firebaseConfig_DEV.js
+firebaseConfig_PROD.js
+firebaseConfig_STG.js
+
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+firebase-debug.log*
+firebase-debug.*.log*
