@@ -1,19 +1,11 @@
-// Import the functions you need from the SDKs you need
 import firebase from 'firebase/app';
 import 'firebase/auth'
+import getEnvVars from '../environment';
+const { TARGET_ENV } = getEnvVars();
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+const firebaseConfig = require("../firebaseConfig_" + TARGET_ENV + ".js")
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyArEHqy173PRbeEor_lwWCbAgFgCnkzCAs",
-  authDomain: "fb-goal-buddy.firebaseapp.com",
-  projectId: "fb-goal-buddy",
-  storageBucket: "fb-goal-buddy.appspot.com",
-  messagingSenderId: "802169792867",
-  appId: "1:802169792867:web:a24c07a96a903351f1cb56"
-};
+// console.log("firebaseConfig: ", firebaseConfig)
 
 // Initialize Firebase
 let app;
