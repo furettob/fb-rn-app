@@ -1,9 +1,6 @@
 import axios from "axios"
-
-const x_api_key = "ajeje"
-const baseUrlLocal = "http://localhost:3000/fb-goal-buddy/europe-west1"
-const baseUrlRemote = "https://europe-west1-fb-goal-buddy.cloudfunctions.net"
-const baseUrl = baseUrlLocal
+import getEnvVars from '../environment';
+const { x_api_key, apiUrl } = getEnvVars();
 
 const getUserList = async (user) => {
     //console.log("Starting api call getGoalList with user:  ", user)
@@ -31,7 +28,7 @@ const getUserList = async (user) => {
         console.log("Token EXPIRED " + (Math.floor(Date.now()/1000) - user?.h?.b?.a) + " seconds ago")
     }
     const axios_params = {
-        url: baseUrl + "/getUserList",
+        url: apiUrl + "/getUserList",
         headers: {
             "x-api-key": x_api_key,
             "access-token": idToken
